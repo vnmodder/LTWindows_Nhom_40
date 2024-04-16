@@ -37,7 +37,7 @@ namespace Demo3Layer.GUI
                 message.To.Add(new MailAddress(item));
             }
 
-            message.Body = rTxtBody.Text;
+            message.Body = htmlEditControl1.DocumentHTML;
             message.IsBodyHtml = true;
 
             MailHelper mailHelper = new MailHelper();
