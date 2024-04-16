@@ -126,5 +126,10 @@ namespace Demo3Layer.BUS.Helper
 
             return string.Empty;
         }
+
+        public void Write(string filePath, string data)
+        {
+            File.WriteAllText(filePath, data);
+        }
     }
 }

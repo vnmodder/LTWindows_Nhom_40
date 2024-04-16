@@ -1,6 +1,7 @@
 ﻿using Demo3Layer.BUS;
 using Demo3Layer.DTO;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Demo3Layer.GUI
 {
@@ -157,16 +158,22 @@ namespace Demo3Layer.GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string filePath = "../aaa.json";
 
-            _studentBUS.Export(filePath);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.ShowDialog();
+            if (!string.IsNullOrEmpty(saveFileDialog.FileName))
+                _studentBUS.Export(saveFileDialog.FileName);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string filePath = "../aaa.json";
-            var listSV = _studentBUS.ReadFile(filePath);
-            dataGridView1.DataSource = listSV;
+            FileDialog fileDialog = new OpenFileDialog();
+            fileDialog.ShowDialog();
+            if (!string.IsNullOrEmpty(fileDialog.FileName))
+            {
+                var listSV = _studentBUS.ReadFile(fileDialog.FileName);
+                dataGridView1.DataSource = listSV;
+            }
         }
     }
 }
