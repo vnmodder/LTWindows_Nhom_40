@@ -38,6 +38,7 @@
             xemThôngTinToolStripMenuItem = new ToolStripMenuItem();
             đăngXuấtToolStripMenuItem1 = new ToolStripMenuItem();
             panel1 = new Panel();
+            gửiMailToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             // 
             // chứcNăngToolStripMenuItem
             // 
-            chứcNăngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dSLớpToolStripMenuItem, dSSinhVienToolStripMenuItem, toolStripSeparator1, đóngỨngDụngToolStripMenuItem });
+            chứcNăngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dSLớpToolStripMenuItem, dSSinhVienToolStripMenuItem, gửiMailToolStripMenuItem, toolStripSeparator1, đóngỨngDụngToolStripMenuItem });
             chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             chứcNăngToolStripMenuItem.Size = new Size(153, 38);
             chứcNăngToolStripMenuItem.Text = "Chức Năng";
@@ -112,6 +113,13 @@
             panel1.Size = new Size(1482, 844);
             panel1.TabIndex = 1;
             // 
+            // gửiMailToolStripMenuItem
+            // 
+            gửiMailToolStripMenuItem.Name = "gửiMailToolStripMenuItem";
+            gửiMailToolStripMenuItem.Size = new Size(359, 44);
+            gửiMailToolStripMenuItem.Text = "Gửi mail";
+            gửiMailToolStripMenuItem.Click += sendMail_Click;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -143,5 +151,6 @@
         private ToolStripMenuItem xemThôngTinToolStripMenuItem;
         private ToolStripMenuItem đăngXuấtToolStripMenuItem1;
         private Panel panel1;
+        private ToolStripMenuItem gửiMailToolStripMenuItem;
     }
 }

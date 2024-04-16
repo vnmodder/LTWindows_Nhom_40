@@ -58,5 +58,11 @@ namespace Demo3Layer.GUI
             panel1.Controls.Add(frmSinhVien);
             frmSinhVien.Show();
         }
+
+        private void sendMail_Click(object sender, EventArgs e)
+        {
+            frmSendMail frmSendMail = new frmSendMail();
+            frmSendMail.ShowDialog();
+        }
     }
 }
