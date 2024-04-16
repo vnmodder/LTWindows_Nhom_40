@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             txtFrom = new TextBox();
             txtTo = new TextBox();
             txtSubject = new TextBox();
-            rTxtBody = new RichTextBox();
             btnSend = new Button();
+            htmlEditControl1 = new Zoople.HTMLEditControl();
             SuspendLayout();
             // 
             // label1
@@ -92,14 +93,6 @@
             txtSubject.Size = new Size(870, 57);
             txtSubject.TabIndex = 4;
             // 
-            // rTxtBody
-            // 
-            rTxtBody.Location = new Point(68, 277);
-            rTxtBody.Name = "rTxtBody";
-            rTxtBody.Size = new Size(1029, 327);
-            rTxtBody.TabIndex = 5;
-            rTxtBody.Text = "";
-            // 
             // btnSend
             // 
             btnSend.Font = new Font("Segoe UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -111,13 +104,39 @@
             btnSend.UseVisualStyleBackColor = true;
             btnSend.Click += btnSend_Click;
             // 
+            // htmlEditControl1
+            // 
+            htmlEditControl1.AcceptsReturn = true;
+            htmlEditControl1.BaseURL = null;
+            htmlEditControl1.CleanMSWordHTMLOnPaste = true;
+            htmlEditControl1.CSSText = null;
+            htmlEditControl1.DocumentHTML = null;
+            htmlEditControl1.EnableInlineSpelling = false;
+            htmlEditControl1.FontSizesList = null;
+            htmlEditControl1.FontsList = null;
+            htmlEditControl1.HiddenButtons = null;
+            htmlEditControl1.ImageStorageLocation = null;
+            htmlEditControl1.InCodeView = false;
+            htmlEditControl1.IndentAmount = 2;
+            htmlEditControl1.IndentsUseBlockuote = false;
+            htmlEditControl1.LanguageFile = null;
+            htmlEditControl1.LicenceActivationKey = null;
+            htmlEditControl1.LicenceKey = null;
+            htmlEditControl1.LicenceKeyInlineSpelling = null;
+            htmlEditControl1.Location = new Point(68, 262);
+            htmlEditControl1.Name = "htmlEditControl1";
+            htmlEditControl1.Size = new Size(1029, 344);
+            htmlEditControl1.TabIndex = 7;
+            htmlEditControl1.ToolstripImageScalingSize = new Size(32, 32);
+            htmlEditControl1.UseParagraphAsDefault = true;
+            // 
             // frmSendMail
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1149, 729);
+            Controls.Add(htmlEditControl1);
             Controls.Add(btnSend);
-            Controls.Add(rTxtBody);
             Controls.Add(txtSubject);
             Controls.Add(txtTo);
             Controls.Add(txtFrom);
@@ -138,7 +157,7 @@
         private TextBox txtFrom;
         private TextBox txtTo;
         private TextBox txtSubject;
-        private RichTextBox rTxtBody;
         private Button btnSend;
+        private Zoople.HTMLEditControl htmlEditControl1;
     }
 }
