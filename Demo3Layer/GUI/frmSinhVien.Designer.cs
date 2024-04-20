@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            txtMail = new TextBox();
+            label6 = new Label();
             numericUpDown1 = new NumericUpDown();
             dateTimePicker1 = new DateTimePicker();
             textBox2 = new TextBox();
@@ -47,6 +49,7 @@
             comboBox1 = new ComboBox();
             button5 = new Button();
             button6 = new Button();
+            button7 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -54,6 +57,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtMail);
+            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(numericUpDown1);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(textBox2);
@@ -65,10 +70,26 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Location = new Point(23, 73);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(921, 173);
+            groupBox1.Size = new Size(1280, 173);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin sinh viên";
+            // 
+            // txtMail
+            // 
+            txtMail.Location = new Point(829, 49);
+            txtMail.Name = "txtMail";
+            txtMail.Size = new Size(358, 39);
+            txtMail.TabIndex = 9;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(771, 52);
+            label6.Name = "label6";
+            label6.Size = new Size(60, 32);
+            label6.TabIndex = 8;
+            label6.Text = "Mail";
             // 
             // numericUpDown1
             // 
@@ -103,7 +124,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(758, 60);
+            checkBox1.Location = new Point(893, 105);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(131, 36);
             checkBox1.TabIndex = 3;
@@ -234,11 +255,22 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // button7
+            // 
+            button7.Location = new Point(1153, 271);
+            button7.Name = "button7";
+            button7.Size = new Size(150, 46);
+            button7.TabIndex = 18;
+            button7.Text = "button7";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
             // frmSinhVien
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1342, 744);
+            Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(comboBox1);
@@ -281,5 +313,8 @@
         private ComboBox comboBox1;
         private Button button5;
         private Button button6;
+        private Button button7;
+        private TextBox txtMail;
+        private Label label6;
     }
 }

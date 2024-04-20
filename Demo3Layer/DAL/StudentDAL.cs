@@ -40,7 +40,7 @@ namespace Demo3Layer.DAL
         public bool UpdateStudent(Student data)
         {
             var query = $"UPDATE [STUDENT] SET " +
-                        $"Name = N'{data.Name}' , Gender = {(data.Gender == true ? 1 : 0)}, " +
+                        $"Name = N'{data.Name}', Mail = '{data.Mail}' , Gender = {(data.Gender == true ? 1 : 0)}, " +
                         $"BirthDay = '{data.BirthDay:yyyy-MM-dd}', " +
                         $"ClassId = {data.ClassId}, Scores = {data.Scores} WHERE Id = {data.Id}";
             var result = DataProvider.Instance.ExecuteNonQuery(query);

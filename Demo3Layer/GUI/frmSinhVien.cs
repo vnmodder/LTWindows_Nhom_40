@@ -1,7 +1,10 @@
 ﻿using Demo3Layer.BUS;
+using Demo3Layer.BUS.Helper;
 using Demo3Layer.DTO;
 using System.Data;
+using System.Net.Mail;
 using System.Windows.Forms;
+using Zoople;
 
 namespace Demo3Layer.GUI
 {
@@ -65,6 +68,7 @@ namespace Demo3Layer.GUI
                 BirthDay = dateTimePicker1.Value,
                 Scores = numericUpDown1.Value,
                 ClassId = comboboxDatas[comboBox1.SelectedIndex].Key,
+                Mail = txtMail.Text,
             };
 
             if (_studentBUS.Add(st))
@@ -82,6 +86,7 @@ namespace Demo3Layer.GUI
             {
                 textBox1.Text = string.Empty;
                 textBox2.Text = string.Empty;
+                txtMail.Text = string.Empty;
                 checkBox1.Checked = false;
                 dateTimePicker1.Value = DateTime.Now;
                 numericUpDown1.Value = 0;
@@ -95,6 +100,7 @@ namespace Demo3Layer.GUI
             }
             textBox1.Text = students[id].Id?.ToString();
             textBox2.Text = students[id].Name;
+            txtMail.Text = students[id].Mail;
             checkBox1.Checked = students[id].Gender == true;
             dateTimePicker1.Value = students[id].BirthDay ?? DateTime.Now;
             numericUpDown1.Value = students[id].Scores ?? 0;
@@ -133,6 +139,7 @@ namespace Demo3Layer.GUI
                 BirthDay = dateTimePicker1.Value,
                 Scores = numericUpDown1.Value,
                 ClassId = comboboxDatas[comboBox1.SelectedIndex].Key,
+                Mail = txtMail.Text,
             };
 
             if (_studentBUS.Update(st))
@@ -173,6 +180,31 @@ namespace Demo3Layer.GUI
             {
                 var listSV = _studentBUS.ReadFile(fileDialog.FileName);
                 dataGridView1.DataSource = listSV;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtMail.Text?.Trim()))
+            {
+                return;
+            }
+
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress("squirrel.io.vn@gmail.com");
+            message.Subject = "[Test] - Xác thực"; 
+            message.To.Add(new MailAddress(txtMail.Text?.Trim()));
+
+            Random rd = new Random();
+            int code = rd.Next(0, 999999);
+
+            message.Body = $"Đây là mã xác \thực: {code:######}";
+            message.IsBodyHtml = true;
+
+            MailHelper mailHelper = new MailHelper();
+            if (mailHelper.SendMail(message))
+            {
+                MessageBox.Show("Đã gửi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

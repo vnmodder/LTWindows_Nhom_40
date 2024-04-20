@@ -28,15 +28,17 @@ namespace Demo3Layer.BUS.Helper
             };
         }
 
-        public void SendMail(MailMessage message)
+        public bool SendMail(MailMessage message)
         {
             try
             {
                  _smtp.Send(message);
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi gửi mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
     }

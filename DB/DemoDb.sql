@@ -67,3 +67,6 @@ BEGIN
 	SELECT * FROM [USER] WHERE UserName = @UserName AND [PassWord]=@PassWord
 END
 GO
+
+ALTER TABLE [STUDENT] ADD Mail VARCHAR(100)
+GO

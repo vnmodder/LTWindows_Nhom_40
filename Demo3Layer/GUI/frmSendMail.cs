@@ -28,20 +28,22 @@ namespace Demo3Layer.GUI
             message.From = new MailAddress(txtFrom.Text);
             message.Subject = txtSubject.Text;
             var mails = txtTo.Text?.Split(';');
-            if (mails== null || mails.Count() < 0)
+            if (mails== null || mails.Count() <= 0)
             {
                 return;
             }
             foreach (var item in mails)
             {
-                message.To.Add(new MailAddress(item));
+                message.To.Add(new MailAddress(item?.Trim()));
             }
 
             message.Body = htmlEditControl1.DocumentHTML;
             message.IsBodyHtml = true;
 
             MailHelper mailHelper = new MailHelper();
-            mailHelper.SendMail(message);
+            if (mailHelper.SendMail(message)){
+                MessageBox.Show("Đã gửi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

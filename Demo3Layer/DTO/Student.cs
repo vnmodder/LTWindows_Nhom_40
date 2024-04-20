@@ -6,6 +6,7 @@ namespace Demo3Layer.DTO
     {
         public int? Id { get; set; }
         public string? Name { get; set; }
+        public string? Mail { get; set; }
         public bool? Gender { get; set; }
         public DateTime? BirthDay { get; set; }
         public int? ClassId { get; set; }
@@ -17,6 +18,7 @@ namespace Demo3Layer.DTO
         {
             Id = (int)row["Id"];
             Name = row["Name"].ToString();
+            Mail = row["Mail"].ToString();
             Gender = (bool) row["Gender"];
             BirthDay = row["BirthDay"]!=null?DateTime.Parse(row["BirthDay"].ToString()): null;
             ClassId = (int)row["ClassId"];
