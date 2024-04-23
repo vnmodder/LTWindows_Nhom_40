@@ -15,13 +15,22 @@ namespace Demo3Layer.GUI
         private void frmReport_Load(object sender, EventArgs e)
         {
             var data = _studentBUS.GetStudentsByClassId(0);
-            var dataSource = new ReportDataSource("DataSet1", data);
+
+            var newData = data.Select(x => new
+            {
+                Masv = x.Id,
+                Ten = x.Name,
+                Lop = x.ClassId,
+                Diem = x.Scores
+            });
+
+            var dataSource = new ReportDataSource("DataSet2", newData);
             reportViewer1.LocalReport.ReportEmbeddedResource =
-                "Demo3Layer.BUS.Reports.Report1.rdlc";
+                "Demo3Layer.BUS.Reports.Report2.rdlc";
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(dataSource);
 
-            reportViewer1.LocalReport.SetParameters(new List<ReportParameter>() { new("testParam", "aha") });
+            reportViewer1.LocalReport.SetParameters(new List<ReportParameter>() { new("tenLop", "aha") });
             reportViewer1.RefreshReport();
         }
     }

@@ -43,14 +43,26 @@ namespace Demo3Layer.GUI
             imgCol.HeaderText = "Ảnh";
             imgCol.Name = "ImgUrl";
             dataGridView1.Columns.Add(imgCol);
+
             dataGridView1.Columns.Add("Mã", "Id");
+
             dataGridView1.Columns.Add("Tên", "ClassName");
+
+            DataGridViewCheckBoxColumn dataGridViewCheck = new DataGridViewCheckBoxColumn(); ;
+            dataGridViewCheck.HeaderText = "Check";
+            dataGridViewCheck.Name = "check";
+            dataGridView1.Columns.Add(dataGridViewCheck);
 
             foreach (Class c in classes)
             {
+                if (string.IsNullOrEmpty(c.ImgUrl))
+                {
+                    continue;
+                }
+
                 var img = new Bitmap(c.ImgUrl);
 
-                dataGridView1.Rows.Add(img, c.Id, c.ClassName);
+                dataGridView1.Rows.Add(img, c.Id, c.ClassName,true);
             }
 ;
         }

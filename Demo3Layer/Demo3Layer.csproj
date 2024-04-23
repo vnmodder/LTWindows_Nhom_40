@@ -10,10 +10,12 @@
 
   <ItemGroup>
     <None Remove="BUS\Reports\Report1.rdlc" />
+    <None Remove="BUS\Reports\Report2.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="BUS\Reports\Report1.rdlc" />
+    <EmbeddedResource Include="BUS\Reports\Report2.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +32,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="BUS\Reports\DataSet2.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -49,6 +56,13 @@
     <None Update="BUS\Reports\DataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="BUS\Reports\DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Resources\check %281%29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Resources\img.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
