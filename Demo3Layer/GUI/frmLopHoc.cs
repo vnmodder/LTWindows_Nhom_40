@@ -37,8 +37,24 @@ namespace Demo3Layer.GUI
         private void loadData()
         {
             classes = _classBUS.GetAllClass();
-            dataGridView1.DataSource = classes;
+            dataGridView1.Columns.Clear();
+
+            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+            imgCol.HeaderText = "Ảnh";
+            imgCol.Name = "ImgUrl";
+            dataGridView1.Columns.Add(imgCol);
+            dataGridView1.Columns.Add("Mã", "Id");
+            dataGridView1.Columns.Add("Tên", "ClassName");
+
+            foreach (Class c in classes)
+            {
+                var img = new Bitmap(c.ImgUrl);
+
+                dataGridView1.Rows.Add(img, c.Id, c.ClassName);
+            }
+;
         }
+
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
@@ -53,7 +69,7 @@ namespace Demo3Layer.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var lop = new Class(null, textBox2.Text);
+            var lop = new Class(null, textBox2.Text, null);
             if (_classBUS.Add(lop))
             {
                 loadData();
@@ -66,7 +82,7 @@ namespace Demo3Layer.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (_classBUS.Update(new(int.Parse(textBox1.Text), textBox2.Text)))
+            if (_classBUS.Update(new(int.Parse(textBox1.Text), textBox2.Text, null)))
             {
                 loadData();
                 return;

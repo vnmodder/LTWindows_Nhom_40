@@ -7,6 +7,11 @@ namespace Demo3Layer.BUS.Helper
 {
     public class FileHelper<T>
     {
+        /// <summary>
+        /// Reads the CSV file.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        /// <returns></returns>
         public List<T> ReadCsvFile(string filePath)
         {
             List<T> records = new();
@@ -60,6 +65,11 @@ namespace Demo3Layer.BUS.Helper
             }
         }
 
+        /// <summary>
+        /// Reads the json file.
+        /// </summary>
+        /// <param name="filePath">The file path</param>
+        /// <returns>list data</returns>
         public List<T> ReadJsonFile(string filePath)
         {
             List<T> records = new();

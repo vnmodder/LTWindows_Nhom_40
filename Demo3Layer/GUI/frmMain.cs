@@ -64,5 +64,11 @@ namespace Demo3Layer.GUI
             frmSendMail frmSendMail = new frmSendMail();
             frmSendMail.ShowDialog();
         }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReport frmReport = new frmReport();
+            frmReport.ShowDialog();
+        }
     }
 }

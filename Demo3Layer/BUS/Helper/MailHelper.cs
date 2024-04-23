@@ -28,6 +28,11 @@ namespace Demo3Layer.BUS.Helper
             };
         }
 
+        /// <summary>
+        /// Send mail
+        /// </summary>
+        /// <param name="message">message</param>
+        /// <returns></returns>
         public bool SendMail(MailMessage message)
         {
             try

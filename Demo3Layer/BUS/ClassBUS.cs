@@ -28,6 +28,11 @@ namespace Demo3Layer.BUS
             return list;
         }
 
+        public DataTable GetAllClasses()
+        {
+            return _classDAL.GetAllClass();
+        }
+
         /// <summary>
         /// Updates the specified data.
         /// </summary>

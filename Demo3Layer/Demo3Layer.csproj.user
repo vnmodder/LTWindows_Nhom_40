@@ -10,11 +10,19 @@
     <Compile Update="GUI\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\frmSendMail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="GUI\frmSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="BUS\Reports\DataSet1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

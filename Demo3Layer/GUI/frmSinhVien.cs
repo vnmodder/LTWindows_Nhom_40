@@ -163,6 +163,11 @@ namespace Demo3Layer.GUI
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the button5 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void button5_Click(object sender, EventArgs e)
         {
 

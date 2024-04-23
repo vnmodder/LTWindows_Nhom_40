@@ -30,6 +30,11 @@ namespace Demo3Layer.BUS
             return result;
         }
 
+        public DataTable GetAll()
+        {
+            return _studentDAL.GetStudentsByClassId(0);
+        }
+
         /// <summary>
         /// Adds the specified student.
         /// </summary>

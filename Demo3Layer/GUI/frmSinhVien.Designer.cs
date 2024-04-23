@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSinhVien));
             groupBox1 = new GroupBox();
             txtMail = new TextBox();
             label6 = new Label();
@@ -169,7 +170,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(570, 263);
+            button4.Location = new Point(566, 263);
             button4.Name = "button4";
             button4.Size = new Size(150, 46);
             button4.TabIndex = 12;
@@ -179,7 +180,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(388, 263);
+            button3.Location = new Point(387, 263);
             button3.Name = "button3";
             button3.Size = new Size(150, 46);
             button3.TabIndex = 11;
@@ -189,7 +190,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(211, 263);
+            button2.Location = new Point(208, 263);
             button2.Name = "button2";
             button2.Size = new Size(150, 46);
             button2.TabIndex = 10;
@@ -209,6 +210,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(23, 334);
             dataGridView1.Name = "dataGridView1";
@@ -237,31 +239,33 @@
             // 
             // button5
             // 
-            button5.Location = new Point(762, 263);
+            button5.Location = new Point(745, 263);
             button5.Name = "button5";
             button5.Size = new Size(150, 46);
             button5.TabIndex = 16;
-            button5.Text = "button5";
+            button5.Text = "Xuất file";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
             // button6
             // 
-            button6.Location = new Point(962, 264);
+            button6.Location = new Point(924, 263);
             button6.Name = "button6";
             button6.Size = new Size(150, 46);
             button6.TabIndex = 17;
-            button6.Text = "button6";
+            button6.Text = "Đọc file";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
             // button7
             // 
-            button7.Location = new Point(1153, 271);
+            button7.Image = (Image)resources.GetObject("button7.Image");
+            button7.ImageAlign = ContentAlignment.MiddleLeft;
+            button7.Location = new Point(1103, 263);
             button7.Name = "button7";
-            button7.Size = new Size(150, 46);
+            button7.Size = new Size(200, 46);
             button7.TabIndex = 18;
-            button7.Text = "button7";
+            button7.Text = "Tự gửi mail";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
